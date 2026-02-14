@@ -16,43 +16,43 @@
 
 Ensure staging is up to date then create the feature off of that.
 
-
-
     a. Switch to Staging Branch:         git checkout staging
     b. Fetch Changes:                    git fetch --prune
     c. Merge Updates:                    git merge origin/staging
     d. Feature Branch Name Example:      mike/feature/add-api-logic
     e. Create Feature Branch:            git checkout -b yourFirstName/feature/name-of-feature
     
-    **Note:** If you aren't sure which branch you're on type: `git branch`
+**Note:** If you aren't sure which branch you're on type: `git branch`
 
 Pushing Your Branch with Upstream:
 
-    a. Add your files:                   `git add .`                               (all files)
-                                         `git add index.html css/style.css`        (individual files) 
+    a. Add your files:                   git add .                               (all files)
+                                         git add index.html css/style.css        (individual files) 
 
-    b. Descriptive Commit Message:       `git commit -m "a brief explanation of the changes/updates."`
+    b. Descriptive Commit Message:       git commit -m "a brief explanation of the changes/updates."
     Note: 
-    _    - When making a PR on GitHub, please add a more in depth description of what was changed/updated_
+        - When making a PR on GitHub, please add a more in depth description of what was changed/updated
 
-    c. Set Upstream / First Push:        `git push -u origin yourFirstName/feature/name-of-feature`
+    c. Set Upstream / First Push:        git push -u origin yourFirstName/feature/name-of-feature
     Note:                           
         - Required on the FIRST Push of each NEW branch you make.
         - It Links your local branch with a new branch on Github         
                                   
-    d. Future Pushes:                    `git push`                                                   
-    Note: 
+    d. Future Pushes:                    git push                                                   
+
+Note: 
         - After setting the upstream, you can just type the 'git push' command since it's already linked to GitHub
+
 
 ## Step 3 - PULL REQUESTS (PR) on Github
 
 Once you push your feature to GitHub you need to make a PR.
 
-    a. Open GitHub Repo:                 `https://github.com/mtq01/m3-movie-app/tree/main`
+    a. Open GitHub Repo:                 https://github.com/mtq01/m3-movie-app/tree/main
     
-    b. Select the Base:                  `Change 'main' to 'staging'`
+    b. Select the Base:                  Change 'main' to 'staging'
     
-    c. Assign Reviewer:                  `On the right side, click the Gear Icon & Select a Team Member`
+    c. Assign Reviewer:                  On the right side, click the Gear Icon & Select a Team Member
     
     d. Merging:                          - You can't merge your own PR (A rule was set on GitHub requiring a reviewer)
                                          - Mention your PR to your team member in a DM/Discord
