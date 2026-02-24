@@ -22,7 +22,7 @@
   "attributes": {
     "startingYear": {
       "type": "number",
-      "default": 2020
+      "default": 2026
     }
   },
   "textdomain": "school-blocks",

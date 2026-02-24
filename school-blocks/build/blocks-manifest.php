@@ -27,7 +27,7 @@ return array(
 		'attributes' => array(
 			'startingYear' => array(
 				'type' => 'number',
-				'default' => 2020
+				'default' => 2026
 			)
 		),
 		'textdomain' => 'school-blocks',

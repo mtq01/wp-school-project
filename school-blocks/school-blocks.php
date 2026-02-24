@@ -1,22 +1,5 @@
 <?php
 /**
- * Plugin Name:       School Blocks
- * Description:       Custom school blocks
- * Version:           0.1.0
- * Requires at least: 6.8
- * Requires PHP:      7.4
- * Author:            The WordPress Contributors
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       school-blocks
- *
- * @package SchoolBlocks
- */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-/**
  * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
  * based on the registered block metadata. Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.

@@ -11,15 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, TextControl } from '@wordpress/components';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,10 +22,25 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
+	const { startingYear } = attributes;
+	const currentYear = new Date().getFullYear().toString();
 	return (
-		<p { ...useBlockProps() }>
-			{ __( 'School Blocks – hello from the editor!', 'school-blocks' ) }
-		</p>
+		<>
+			<InspectorControls>
+				<PanelBody title={ __( 'Settings', 'copyright-date' ) }>
+					<TextControl
+						label={ __( 'Starting Year', 'copyright-date' ) }
+						value={ startingYear }
+						onChange={ ( newStartingYear ) => {
+							setAttributes( { startingYear: newStartingYear } );
+						} }
+					/>
+				</PanelBody>
+			</InspectorControls>
+			<p { ...useBlockProps() }>
+				{ __( 'Copyright', 'copyright-date') } © { startingYear } - { currentYear }
+			</p>
+		</>
 	);
 }
