@@ -109,6 +109,21 @@
 					"fontFamily": "\"PT Serif\", serif",
 					"name": "PT Serif",
 					"slug": "pt-serif"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "\"ADLaM Display\"",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/adlam-display/adlam-display-400-normal.woff2"
+							]
+						}
+					],
+					"fontFamily": "\"ADLaM Display\", system-ui",
+					"name": "ADLaM Display",
+					"slug": "adlam-display"
 				}
 			],
 			"fontSizes": [
