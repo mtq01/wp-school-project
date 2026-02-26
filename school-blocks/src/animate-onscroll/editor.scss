@@ -1,0 +1,26 @@
+/* main dashed box for visibility in editor */
+.wp-block-school-blocks-animate-onscroll {
+    border: 2px dashed #007cba;
+    background: #007cba0d;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* animation label at top of box */
+.animate-editor-info {
+    background: #007cba;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    font-family: sans-serif;
+}
+
+.animate-editor-info code {
+    background: #ffffff33;
+    color: #fff;
+    margin-left: 5px;
+    padding: 2px 4px;
+}
