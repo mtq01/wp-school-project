@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "school-blocks/animate-onscroll",
+    "version": "0.1.0",
+    "title": "Animate",
+    "category": "design",
+    "icon": "buddicons-activity",
+    "description": "This block will animate when scrolled into the viewport.",
+    "attributes": {
+        "animation": {
+            "type": "string",
+            "default": "fade-up"
+        }
+    },
+    "supports": {
+        "html": false
+    },
+    "textdomain": "school-blocks",
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./view.js",
+	"editorStyle": "file:./index.css"
+}

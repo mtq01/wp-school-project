@@ -39,7 +39,8 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<p { ...useBlockProps() }>
-				{ __( 'Copyright', 'copyright-date') } © { startingYear } - { currentYear }
+				{ __( 'Copyright', 'copyright-date' ) } © { startingYear } -{ ' ' }
+				{ currentYear }
 			</p>
 		</>
 	);

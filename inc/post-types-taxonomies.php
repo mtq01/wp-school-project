@@ -125,10 +125,10 @@ function school_register_custom_post_types()
     );
 
     // [important] the first parameter 'fwd-students' is a unique key (use a prefix relating to your company to prevent conflicts if a client installs a plugin that also uses a 'students' parameter. fwd represents the course we're in right now)
-    register_post_type('fwd-students', $args);
+    register_post_type('fwd-staff', $args);
 
 }
-// taxonomies run on the init hook
+// custom post types run on the init hook
 add_action('init', 'school_register_custom_post_types');
 
 function school_register_taxonomies()
@@ -169,10 +169,10 @@ function school_register_taxonomies()
         'rewrite' => array('slug' => 'student-categories'),
     );
     // 2nd parameter specifies which post types this taxonomy applies to (taxonomies cant exist without posts)
-    register_taxonomy('fwd-school-category', array('fwd-students'), $args);
+    register_taxonomy('fwd-student-category', array('fwd-students'), $args);
 
 
-        // ++++++ STAFF CATEGORY TAXONOMY +++++
+    // ++++++ STAFF CATEGORY TAXONOMY +++++
     $labels = array(
         'name' => _x('Staff Categories', 'taxonomy general name', 'school-theme'),
         'singular_name' => _x('Staff Category', 'taxonomy singular name', 'school-theme'),
@@ -208,7 +208,7 @@ function school_register_taxonomies()
         'rewrite' => array('slug' => 'staff-categories'),
     );
     // 2nd parameter specifies which post types this taxonomy applies to (taxonomies cant exist without posts)
-    register_taxonomy('fwd-school-category', array('fwd-staff'), $args);
+    register_taxonomy('fwd-staff-category', array('fwd-staff'), $args);
 }
 add_action('init', 'school_register_taxonomies');
 
