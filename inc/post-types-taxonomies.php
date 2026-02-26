@@ -199,13 +199,27 @@ function school_register_taxonomies()
         // set 'hierarchical' to true if you want to be able to use hierarchy checkboxes, false to the textbox to type in for tags.
         'hierarchical' => true,
         'labels' => $labels,
-        'show_ui' => true,
+        // hide the UI for non-admin users (staff catefories).
+        'show_ui' => current_user_can('update_core'),
         'show_in_menu' => true,
         'show_in_nav_menu' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
         'query_var' => true,
         'rewrite' => array('slug' => 'staff-categories'),
+
+        // mod $args params and added capabilties
+        'capabilities' => array(
+            // rmv managing/adding for non-admins
+            'manage_terms' => 'update_core',
+            // rmv editing term names
+            'edit_terms' => 'update_core',
+            // rmv deleting terms
+            'delete_terms' => 'update_core',
+            // rmv the ability to select/apply dem
+            'assign_terms' => 'edit_posts',
+        ),
+
     );
     // 2nd parameter specifies which post types this taxonomy applies to (taxonomies cant exist without posts)
     register_taxonomy('fwd-staff-category', array('fwd-staff'), $args);
