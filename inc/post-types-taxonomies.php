@@ -7,7 +7,7 @@ function school_register_custom_post_types()
         'name' => _x('Students', 'post type general name', 'school-theme'),
         'singular_name' => _x('student', 'post type singular name', 'school-theme'),
         'add_new' => _x('Add New', 'student', 'school-theme'),
-        'add_new_item' => __('Add Student Name', 'school-theme'),
+        'add_new_item' => __('Add New Student', 'school-theme'),
         'edit_item' => __('Edit student', 'school-theme'),
         'new_item' => __('New student', 'school-theme'),
         'view_item' => __('View student', 'school-theme'),
@@ -70,7 +70,7 @@ function school_register_custom_post_types()
         'name' => _x('Staff', 'post type general name', 'school-theme'),
         'singular_name' => _x('staff', 'post type singular name', 'school-theme'),
         'add_new' => _x('Add New', 'staff', 'school-theme'),
-        'add_new_item' => __('Add Staff Name', 'school-theme'),
+        'add_new_item' => __('Add New Staff', 'school-theme'),
         'edit_item' => __('Edit staff', 'school-theme'),
         'new_item' => __('New staff', 'school-theme'),
         'view_item' => __('View staff', 'school-theme'),
@@ -227,7 +227,21 @@ function school_register_taxonomies()
 add_action('init', 'school_register_taxonomies');
 
 
+// +++++ change 'title' placeholder for staff/studnets +++++
+function school_change_placeholders( $title ) {
+    $screen = get_current_screen();
 
+    // switch is bit cleaner than an if/else
+    switch ( $screen->post_type ) {
+        case 'fwd-students':
+            return 'Add Student Name';
+        case 'fwd-staff':
+            return 'Add Staff Name';
+        default:
+            return $title;
+    }
+}
+add_filter( 'enter_title_here', 'school_change_placeholders' );
 
 
 
