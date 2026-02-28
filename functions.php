@@ -61,8 +61,10 @@ function school_enqueues()
 }
 
 // +++++  CUSTOM IMG SIZES +++++
-function mindset_setup()
+function school_setup()
 {
+    add_theme_support('post-thumbnails');
+    
     // load csss in block editor
     add_editor_style(get_stylesheet_uri());
 
@@ -71,20 +73,20 @@ function mindset_setup()
     add_image_size('custom-200x250', 200, 250, true);
 }
 
-add_action('after_setup_theme', 'mindset_setup');
+add_action('after_setup_theme', 'school_setup');
 
 // make custom sizes selectable from WP admin.
-function mindset_add_custom_image_sizes($size_names)
+function school_add_custom_image_sizes($size_names)
 {
     $new_sizes = array(
-        'custom-400x500' => __('400x500', 'mindset-theme'),
-        'custom-200x250' => __('200x250', 'mindset-theme'),
+        'custom-400x500' => __('400x500', 'school-theme'),
+        'custom-200x250' => __('200x250', 'school-theme'),
     );
     return array_merge($size_names, $new_sizes);
 }
 
 // attach function to the UI
-add_filter('image_size_names_choose', 'mindset_add_custom_image_sizes');
+add_filter('image_size_names_choose', 'school_add_custom_image_sizes');
 
 // attach the function to the hook
 add_action('wp_enqueue_scripts', 'school_enqueues');
